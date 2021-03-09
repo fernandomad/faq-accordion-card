@@ -1,16 +1,17 @@
-:root{
-    --dark-desaturated-blue:hsl(238,29%,16%);
-    --soft-red:hsl(14,88%,65%);
+:root {
+    --dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
 
-    --soft-violet:hsl(273, 75%, 66%);
-    --soft-blue:hsl(240, 73%, 65%);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
 
-    --very-dark-grayish-blue:hsl(237,12%,33%);
-    --dark-grayish-blue:hsl(240,6%,50%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
 
-    --light-grayish-blue:hsl(240,5%,91%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
 }
-body{
+
+body {
     font-family: 'Kumbh Sans';
     font-size: 12px;
     margin: 0;
@@ -20,53 +21,70 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 40px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
 }
 .card{
-    margin:0 24px;
     background-color: white;
     border-radius: 1em;
     padding-bottom: 28px;
-    margin-top: 40px;
+    width: 90%;
 }
 
 
-.card-header{
-    margin-top: -8.9em;
+.card-header {
+    margin-top: -9em;
 }
-.header-illustration-box{
+
+.illustration-box {
     display: none;
 }
-.header-illustration-woman{
+
+.header-illustration-woman {
     background-image: url("../images/bg-pattern-mobile.svg");
     background-position: bottom center;
     background-repeat: no-repeat;
     text-align: center;
-    margin: 40px 0;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    margin: 0;
 }
-.illustration-woman{
-    background-position-x:center;
-    width: 236.85px;
+
+.illustration-woman {
+    background-position-x: center;
+    margin-right: 29px;
 }
-.card-body-title{
+
+.card-body-title {
     text-align: center;
-    color: var(--dark-desaturated-blue) ;
+    color: var(--dark-desaturated-blue);
+    margin: 19px 0;
 }
-.element{
+
+.element {
     padding: 20px 2em;
     border-bottom: 1px solid var(--light-grayish-blue);
 }
-.element-question{
+
+.element-question {
     display: flex;
     justify-content: space-between;
 }
-.element-question p{
+
+.element-question p {
     margin: 0;
     color: var(--very-dark-grayish-blue);
 }
-.element-question>label{
+
+.element-question>label {
     transition: all 0.25s ease-out;
 }
-.arrow-down{
+
+.arrow-down {
     background-image: url("../images/icon-arrow-down.svg");
     color: var(--soft-red);
     width: 10px;
@@ -74,22 +92,94 @@ body{
     display: inline-block;
     cursor: pointer;
 }
-.element-content{
+
+.element-content {
     max-height: 0px;
     overflow: hidden;
     transition: all 0.25s ease-out;
     color: var(--dark-grayish-blue);
+    line-height: 1.75em;
 }
-.toggle{
+
+.toggle {
     display: none;
 }
-.toggle:checked +.element-question+ .element-content  {
+
+.toggle:checked+.element-question+.element-content {
     max-height: max-content;
     margin-top: 16px;
 }
- .toggle:checked + .element-question>label {
+
+.toggle:checked+.element-question>label {
     transform: rotate(180deg);
 }
-.toggle:checked + .element-question{
+
+.toggle:checked+.element-question {
     font-weight: 700;
+}
+
+.illustration-woman-mobile {
+    background-image: url("../images/illustration-woman-online-mobile.svg");
+}
+
+.illustration-woman-desktop, .illustration-box {
+    display: none;
+}
+
+@media screen and (min-width: 376px) {
+    .card {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .card-body {
+        width: 40%;
+    }
+    .card-header {
+        margin: 0;
+        width: 50%;
+        background-image: url("../images/bg-pattern-desktop.svg");
+        background-position: -6em 120%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    .element {
+        padding-left: 0;
+    }
+
+    .card-body-title {
+        text-align: left;
+        margin-top: 0;
+        font-size: 3em;
+    }
+
+    .illustration-woman-mobile {
+        display: none;
+    }
+
+    .illustration-woman-desktop {
+        display: block;
+        margin-left: -7em;
+        padding: 70px 0;
+
+    }
+    .header-illustration-woman {
+        margin: 0;
+        background-image: none;
+    }
+    .card-container{
+        position: relative;
+        width: 70%;
+        display:flex;
+    }
+    .illustration-box{
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: -4%;
+    }
+   
 }
